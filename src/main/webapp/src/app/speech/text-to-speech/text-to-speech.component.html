@@ -1,0 +1,8 @@
+<div>
+  <mat-form-field>
+    <textarea #text matInput placeholder="Texte" matTextareaAutosize matAutosizeMinRows="2"
+            matAutosizeMaxRows="5"></textarea>
+  </mat-form-field>
+  <button mat-button (click)="addTexte(text.value)">Add</button>
+</div>
+<app-list [list]="listOfText"></app-list>

@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <app-conversation></app-conversation>
+  <app-choice-bar></app-choice-bar>
+</div>
+<router-outlet></router-outlet>
+-->
+
+<!--
+<nav *ngIf="authService.isLoggedIn" class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+          aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">North America - Conventional</a>
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <div class="navbar-nav mr-auto">
+    	<a routerLink="/conversation" routerLinkActive="active">Conversation</a>
+  		<a routerLink="/logout" routerLinkActive="active">Logout</a>
+    </div>
+  </div>
+</nav>
+-->
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item routerLink="/conversation" routerLinkActive="active">Conversation</button>
+  <button mat-menu-item routerLink="/speech" routerLinkActive="active">Speech</button>
+  <button mat-menu-item routerLink="/logout" routerLinkActive="active">Déconnexion</button>
+</mat-menu>
+
+<mat-toolbar>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <mat-icon *ngIf="authService.isLoggedIn" class="example-icon">verified_user</mat-icon>
+</mat-toolbar>
+
+
+<div style="margin: 30px">
+<router-outlet></router-outlet>
+</div>

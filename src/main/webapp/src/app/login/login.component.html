@@ -1,0 +1,8 @@
+<p>{{message}}</p>
+<div *ngIf="!authService.isLoggedIn">
+  <mat-form-field>
+    <input matInput placeholder="Login" #box id="login" (keyup.enter)="login(box.value)"/>
+  </mat-form-field>
+  <button mat-button (click)="login(box.value)">Connexion</button>
+</div>
+<button mat-button (click)="logout()" *ngIf="authService.isLoggedIn">Déconnexion</button>

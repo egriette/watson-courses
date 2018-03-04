@@ -1,0 +1,8 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let text of list">
+    <span matLine>{{ text.source }}</span>
+    <button mat-icon-button (click)="play(text)">
+      <mat-icon>tap_and_play</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-nav-list>
